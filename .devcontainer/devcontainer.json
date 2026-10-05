@@ -1,0 +1,21 @@
+{
+  "name": "Fedora Minecraft Desktop",
+  "build": {
+    "dockerfile": "Containerfile"
+  },
+  "features": {
+    // Tự động cài đặt giao diện Desktop qua trình duyệt (noVNC)
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "ui.graphics": "yes"
+    }
+  },
+  // Mở cổng 6080 (cổng của giao diện Desktop trên trình duyệt)
+  "forwardPorts":,
+  "portsAttributes": {
+    "6080": {
+      "label": "Minecraft Desktop",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
