@@ -1,20 +1,17 @@
 {
-  "name": "Fedora Minecraft Desktop",
-  "build": {
-    "dockerfile": "Containerfile"
-  },
+  "name": "Minecraft Web Desktop",
   "features": {
-    // Tự động cài đặt giao diện Desktop qua trình duyệt (noVNC)
+    // Cài đặt giao diện ảo noVNC tương thích hoàn hảo với nền Ubuntu mặc định
     "ghcr.io/devcontainers/features/desktop-lite:1": {
       "version": "latest",
       "ui.graphics": "yes"
     }
   },
-  // Mở cổng 6080 (cổng của giao diện Desktop trên trình duyệt)
+  "updateContent": "sudo apt-get update && sudo apt-get install -y openjdk-17-jre openjdk-21-jre wget flatpak && sudo flatpak remote-add --if-not-exists flathub https://flathub.org && sudo flatpak install -y flathub org.prismlauncher.PrismLauncher",
   "forwardPorts":,
   "portsAttributes": {
     "6080": {
-      "label": "Minecraft Desktop",
+      "label": "Màn Hình Chơi Game",
       "onAutoForward": "openBrowser"
     }
   }
