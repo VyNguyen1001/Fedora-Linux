@@ -1,8 +1,1 @@
-FROM fedora:latest
 
-RUN dnf -y update && \
-    dnf -y install git curl wget flatpak mesa-dri-drivers xorg-x11-server-Xvfb java-17-openjdk java-21-openjdk && \
-    dnf clean all
-
-RUN flatpak remote-add --if-not-exists flathub https://flathub.org && \
-    flatpak install -y flathub org.prismlauncher.PrismLauncher
